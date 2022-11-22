@@ -1,0 +1,11 @@
+﻿  main.cpp
+C:\Fork Source\MY_PL_CQG\PL5\PL5\ReversePolishSolver.h(21,1): error C2440: '<function-style-cast>': cannot convert from 'initializer list' to 'Operation<std::function<int (int,int)>>'
+C:\Fork Source\MY_PL_CQG\PL5\PL5\ReversePolishSolver.h(21,1): message : No constructor could take the source type, or constructor overload resolution was ambiguous
+C:\Fork Source\MY_PL_CQG\PL5\PL5\main.cpp(38): message : see reference to function template instantiation 'void ReversePolishSolver::RegisterOperator<1,FooUnar>(const std::string &,T)' being compiled
+          with
+          [
+              T=FooUnar
+          ]
+  ReversePolishSolver.cpp
+C:\Fork Source\MY_PL_CQG\PL5\PL5\ReversePolishSolver.cpp(28,27): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
+  Generating Code...
