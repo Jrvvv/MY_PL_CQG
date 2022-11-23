@@ -38,7 +38,7 @@ int ReversePolishSolver::Solve(const std::string& expression) {
 				if (oper.getName() == token) {
 					isOperation++;
 					int last;	
-					if (operands.empty() != 0) {	// check if stack is empty
+					if (operands.empty() == false) {	// check if stack is empty
 						last = operands.top();
 						operands.pop();				// pop from top
 					}
@@ -46,7 +46,7 @@ int ReversePolishSolver::Solve(const std::string& expression) {
 						last = 0;
 					}
 					auto f = oper.getFunction();
-					operands.push(f(last));			// pushing new operand
+					operands.push((f(last)));			// pushing new operand
 					break;
 				}
 			} 
@@ -56,14 +56,15 @@ int ReversePolishSolver::Solve(const std::string& expression) {
 				int second;
 				for (Operation<std::function<int(int, int)>> oper : m_binaryOperations) {
 					if (oper.getName() == token) {
-						if (operands.empty() != 0) {	// check if stack is empty
+						isOperation++;
+						if (operands.empty() == false) {	// check if stack is empty
 							second = operands.top();
 							operands.pop();				// pop second from top
 						}
 						else {
 							second = 0;
 						}
-						if (operands.empty() != 0) {	// check if stack is empty
+						if (operands.empty() == false) {	// check if stack is empty
 							first = operands.top();
 							operands.pop();				// pop first from top
 						}
@@ -75,15 +76,14 @@ int ReversePolishSolver::Solve(const std::string& expression) {
 						break;
 					}
 				}
-				
 			}
 		} 
-		if (isOperation == 0 && nonDigit != 0) {						//if no operation with token's name throw exception
+		if (isOperation == 0 && nonDigit != 0) {		//if no operation with token's name throw exception
 			std::string error = "Operation " + token + " doesn't exist";
-			throw std::exception(error.c_str());
+			throw std::logic_error(error.c_str());
 		}
 
 		
 	}
-	return 0;
+	return operands.top();
 }

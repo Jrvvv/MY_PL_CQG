@@ -5,39 +5,50 @@
 #include <stack>
 #include <algorithm>
 #include <iostream>
-
+#include <optional>
 #include "Operation.h"
 
+typedef std::function<int(int)> unFunPtr;
+typedef std::function<int(int, int)> binFunPtr;
 
 class ReversePolishSolver
 {
 public:
 	template <size_t argsCount, class T>
 	void RegisterOperator(const std::string& name, T fn) {
-		if (argsCount == 1) {
-			m_unaryOperations.push_back(Operation<std::function<int(int)>>(name, fn, 1));
-		}
-		else if (argsCount == 2) {
-			m_binaryOperations.push_back(Operation<std::function<int(int, int)>>(name, fn, 1));
-		}
-		else {
-			throw std::exception();
-		}
-	};
+		if constexpr (argsCount == 1) {
+			for (Operation<std::function<int(int)>> oper : m_unaryOperations) {
+				if (oper.getName() == name) {
+					throw std::logic_error("Function with name " + name + " already exists");
+				}
+				if (!name.empty() && std::find_if(name.begin(),
+					name.end(), [](unsigned char c) { return !std::isdigit(c); }) == name.end()) {
+					throw std::logic_error("Function name cant be a number");
+				}
+			}
+			m_unaryOperations.push_back(Operation<unFunPtr>(name, fn, 1));
 
 
+		} else if constexpr (argsCount == 2) {
+			for (Operation<std::function<int(int, int)>> oper : m_binaryOperations) {
+				if (oper.getName() == name) {
+					throw std::logic_error("Function with name " + name + " already exis");
+				}
+				if (!name.empty() && std::find_if(name.begin(),
+					name.end(), [](unsigned char c) { return !std::isdigit(c); }) == name.end()) {
+					throw std::logic_error("Function name cant be a number");
+				}
+			}
+			m_binaryOperations.push_back(Operation<binFunPtr>(name, fn, 2));
+
+
+		} else {
+			throw std::logic_error("argsCount should be 1 or 2");
+		}
+	}
 	int Solve(const std::string& expression);
 
 private:
-	std::vector<Operation<std::function<int(int, int)>>> m_binaryOperations;
-	std::vector<Operation<std::function<int(int)>>> m_unaryOperations;
+	std::vector<Operation<binFunPtr>> m_binaryOperations;
+	std::vector<Operation<unFunPtr>> m_unaryOperations;
 };
-
-
-//template <> inline void ReversePolishSolver::RegisterOperator<1>(const std::string& name, std::function<int(int)> fn) {
-//	m_unaryOperations.push_back(Operation<std::function<int(int)>>(name, fn, 1));
-//}
-
-//template <> inline void ReversePolishSolver::RegisterOperator<2>(const std::string& name, std::function<int(int, int)> fn) {
-//	m_binaryOperations.push_back(Operation<std::function<int(int, int)>>(name, fn, 1));
-//}

@@ -1,11 +1,15 @@
 ﻿  main.cpp
-C:\Fork Source\MY_PL_CQG\PL5\PL5\ReversePolishSolver.h(21,1): error C2440: '<function-style-cast>': cannot convert from 'initializer list' to 'Operation<std::function<int (int,int)>>'
-C:\Fork Source\MY_PL_CQG\PL5\PL5\ReversePolishSolver.h(21,1): message : No constructor could take the source type, or constructor overload resolution was ambiguous
-C:\Fork Source\MY_PL_CQG\PL5\PL5\main.cpp(38): message : see reference to function template instantiation 'void ReversePolishSolver::RegisterOperator<1,FooUnar>(const std::string &,T)' being compiled
-          with
-          [
-              T=FooUnar
-          ]
+  The contents of <optional> are available only with C++17 or later.
+C:\Fork Source\MY_PL_CQG\PL5\PL5\ReversePolishSolver.h(19,3): warning C4984: 'if constexpr' is a C++17 language extension
+C:\Fork Source\MY_PL_CQG\PL5\PL5\ReversePolishSolver.h(18,7): message : This diagnostic occurred in the compiler generated function 'void ReversePolishSolver::RegisterOperator(const std::string &,T)'
+C:\Fork Source\MY_PL_CQG\PL5\PL5\ReversePolishSolver.h(32,10): warning C4984: 'if constexpr' is a C++17 language extension
+C:\Fork Source\MY_PL_CQG\PL5\PL5\ReversePolishSolver.h(18,7): message : This diagnostic occurred in the compiler generated function 'void ReversePolishSolver::RegisterOperator(const std::string &,T)'
   ReversePolishSolver.cpp
+  The contents of <optional> are available only with C++17 or later.
+C:\Fork Source\MY_PL_CQG\PL5\PL5\ReversePolishSolver.h(19,3): warning C4984: 'if constexpr' is a C++17 language extension
+C:\Fork Source\MY_PL_CQG\PL5\PL5\ReversePolishSolver.h(18,7): message : This diagnostic occurred in the compiler generated function 'void ReversePolishSolver::RegisterOperator(const std::string &,T)'
+C:\Fork Source\MY_PL_CQG\PL5\PL5\ReversePolishSolver.h(32,10): warning C4984: 'if constexpr' is a C++17 language extension
+C:\Fork Source\MY_PL_CQG\PL5\PL5\ReversePolishSolver.h(18,7): message : This diagnostic occurred in the compiler generated function 'void ReversePolishSolver::RegisterOperator(const std::string &,T)'
 C:\Fork Source\MY_PL_CQG\PL5\PL5\ReversePolishSolver.cpp(28,27): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
   Generating Code...
+  PL5.vcxproj -> C:\Fork Source\MY_PL_CQG\PL5\x64\Debug\PL5.exe
