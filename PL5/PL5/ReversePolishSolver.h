@@ -7,22 +7,25 @@
 #include <iostream>
 #include <optional>
 #include "Operation.h"
+#include <typeinfo>
 
 typedef std::function<int(int)> unFunPtr;
 typedef std::function<int(int, int)> binFunPtr;
+
+bool isStringNumber(const std::string& s);
 
 class ReversePolishSolver
 {
 public:
 	template <size_t argsCount, class T>
 	void RegisterOperator(const std::string& name, T fn) {
+
 		if constexpr (argsCount == 1) {
-			for (Operation<std::function<int(int)>> oper : m_unaryOperations) {
+			for (Operation<unFunPtr> oper : m_unaryOperations) {
 				if (oper.getName() == name) {
 					throw std::logic_error("Function with name " + name + " already exists");
 				}
-				if (!name.empty() && std::find_if(name.begin(),
-					name.end(), [](unsigned char c) { return !std::isdigit(c); }) == name.end()) {
+				if (isStringNumber(name)) {
 					throw std::logic_error("Function name cant be a number");
 				}
 			}
@@ -30,12 +33,11 @@ public:
 
 
 		} else if constexpr (argsCount == 2) {
-			for (Operation<std::function<int(int, int)>> oper : m_binaryOperations) {
+			for (Operation<binFunPtr> oper : m_binaryOperations) {
 				if (oper.getName() == name) {
-					throw std::logic_error("Function with name " + name + " already exis");
+					throw std::logic_error("Function with name " + name + " already exists");
 				}
-				if (!name.empty() && std::find_if(name.begin(),
-					name.end(), [](unsigned char c) { return !std::isdigit(c); }) == name.end()) {
+				if (isStringNumber(name)) {
 					throw std::logic_error("Function name cant be a number");
 				}
 			}

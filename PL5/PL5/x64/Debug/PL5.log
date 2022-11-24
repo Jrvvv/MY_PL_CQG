@@ -1,15 +1,7 @@
 ﻿  main.cpp
   The contents of <optional> are available only with C++17 or later.
-C:\Fork Source\MY_PL_CQG\PL5\PL5\ReversePolishSolver.h(19,3): warning C4984: 'if constexpr' is a C++17 language extension
-C:\Fork Source\MY_PL_CQG\PL5\PL5\ReversePolishSolver.h(18,7): message : This diagnostic occurred in the compiler generated function 'void ReversePolishSolver::RegisterOperator(const std::string &,T)'
-C:\Fork Source\MY_PL_CQG\PL5\PL5\ReversePolishSolver.h(32,10): warning C4984: 'if constexpr' is a C++17 language extension
-C:\Fork Source\MY_PL_CQG\PL5\PL5\ReversePolishSolver.h(18,7): message : This diagnostic occurred in the compiler generated function 'void ReversePolishSolver::RegisterOperator(const std::string &,T)'
-  ReversePolishSolver.cpp
-  The contents of <optional> are available only with C++17 or later.
-C:\Fork Source\MY_PL_CQG\PL5\PL5\ReversePolishSolver.h(19,3): warning C4984: 'if constexpr' is a C++17 language extension
-C:\Fork Source\MY_PL_CQG\PL5\PL5\ReversePolishSolver.h(18,7): message : This diagnostic occurred in the compiler generated function 'void ReversePolishSolver::RegisterOperator(const std::string &,T)'
-C:\Fork Source\MY_PL_CQG\PL5\PL5\ReversePolishSolver.h(32,10): warning C4984: 'if constexpr' is a C++17 language extension
-C:\Fork Source\MY_PL_CQG\PL5\PL5\ReversePolishSolver.h(18,7): message : This diagnostic occurred in the compiler generated function 'void ReversePolishSolver::RegisterOperator(const std::string &,T)'
-C:\Fork Source\MY_PL_CQG\PL5\PL5\ReversePolishSolver.cpp(28,27): warning C4244: '=': conversion from '__int64' to 'int', possible loss of data
-  Generating Code...
+C:\Fork Source\MY_PL_CQG\PL5\PL5\ReversePolishSolver.h(23,3): warning C4984: 'if constexpr' is a C++17 language extension
+C:\Fork Source\MY_PL_CQG\PL5\PL5\ReversePolishSolver.h(21,7): message : This diagnostic occurred in the compiler generated function 'void ReversePolishSolver::RegisterOperator(const std::string &,T)'
+C:\Fork Source\MY_PL_CQG\PL5\PL5\ReversePolishSolver.h(35,10): warning C4984: 'if constexpr' is a C++17 language extension
+C:\Fork Source\MY_PL_CQG\PL5\PL5\ReversePolishSolver.h(21,7): message : This diagnostic occurred in the compiler generated function 'void ReversePolishSolver::RegisterOperator(const std::string &,T)'
   PL5.vcxproj -> C:\Fork Source\MY_PL_CQG\PL5\x64\Debug\PL5.exe
